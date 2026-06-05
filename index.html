@@ -283,6 +283,85 @@
             usuários com o chatbot.
         </li>
     </ul>
+
+    <h3>5.2. Etapas da Metodologia</h3>
+
+    <p>
+        O desenvolvimento do IFBot será conduzido através de seis etapas principais, conforme<br>
+        descrito a seguir:
+    </p>
+
+    <ol>
+        <li>
+            Coleta e Estruturação de Dados
+            <p>
+                A primeira etapa envolve a coleta de dados institucionais. A extração de<br>
+                documentos públicos será realizada utilizando técnicas de web scraping, com o<br>
+                auxílio das bibliotecas <i>Scrapy</i> e <i>BeautifulSoup</i>. Além disso, arquivos<br>
+                institucionais serão coletados diretamente de fontes oficiais. Os dados extraídos<br>
+                serão estruturados em formatos padronizados (JSON, CSV) e armazenados em<br>
+                um banco de dados adequado (<i>PostgreSQL</i> ou <i>MongoDB</i>), o que permitirá uma<br>
+                recuperação eficiente posterior.
+            </p>
+        </li>
+        <li>
+            Processamento e Indexação das Informações
+            <p>
+                Após a coleta, será aplicado PLN para a segmentação e remoção de ruídos, bem<br>
+                como para a análise semântica dos textos. Para garantir uma recuperação<br>
+                eficiente das informações com base na similaridade semântica, será<br>
+                implementada uma indexação vetorial utilizando <i>FAISS</i>. Este processo assegura<br>
+                que as informações recuperadas sejam relevantes para as consultas realizadas<br>
+                pelos usuários.
+            </p>
+        </li>
+        <li>
+            Treinamento do Chatbot com RAG
+            <p>
+                O modelo de RAG será treinado para otimizar a geração de respostas a partir da<br>
+                recuperação de documentos relevantes. Esse modelo combinará a recuperação de<br>
+                informações com a geração de respostas em linguagem natural, aumentando a<br>
+                precisão e contextualização das respostas fornecidas. Haverá também a<br>
+                realização de testes de refinamento, com ajustes nos hiperparâmetros do modelo,<br>
+                visando aprimorar sua performance.
+            </p>
+        </li>
+        <li>
+            Desenvolvimento da Interface e Integração
+            <p>
+                Será desenvolvida uma interface interativa que permita aos usuários interagir<br>
+                com o IFBot de maneira intuitiva. A comunicação entre o chatbot e os usuários<br>
+                será viabilizada por meio da criação de uma API utilizando <i>FastAPI</i> ou <i>Flask</i>. O<br>
+                IFBot será integrado a diversas plataformas de comunicação, como Telegram,<br>
+                WhatsApp e o portal web da instituição, ampliando a acessibilidade ao serviço e<br>
+                atendendo a diferentes preferências de uso dos usuários.
+            </p>
+        </li>
+        <li>
+            Testes e Validação
+            <p>
+                Após o desenvolvimento, o IFBot passará por uma série de testes unitários e<br>
+                testes de desempenho para garantir a precisão das respostas fornecidas. A<br>
+                validação será realizada com um grupo de usuários internos da instituição, que<br>
+                fornecerão feedbacks importantes para ajustes e melhorias. Um mecanismo de<br>
+                feedback contínuo também será implementado, permitindo que os usuários<br>
+                reportem inconsistências ou sugiram melhorias nas respostas geradas pelo<br>
+                chatbot.
+            </p>
+        </li>
+        <li>
+            Implantação e Monitoramento Contínuo
+            <p>
+                Após a fase de validação, o IFBot será disponibilizado oficialmente para toda a<br>
+                comunidade acadêmica. Para garantir o bom desempenho contínuo do sistema,<br>
+                será implementado um sistema de monitoramento contínuo, que avalia métricas<br>
+                como a taxa de uso, precisão das respostas e satisfação dos usuários. Com base<br>
+                nos dados coletados, serão realizados aprimoramentos periódicos no sistema<br>
+                para otimizar sua eficiência e atender de forma mais eficaz às necessidades dos<br>
+                usuários.
+            </p>
+        </li>
+    </ol>
 </body>
 
 </html>
